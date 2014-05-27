@@ -114,7 +114,7 @@ public class ResourceInjectResolver implements InjectionResolver<Resource> {
                 if (beanName != null && !beanName.equals(""))
                     return ctx.getBean(beanName);
             } catch (BeansException e) {
-                LOGGER.log(Level.INFO, "Unable to get bean '" + beanName + "' from Spring context");
+                LOGGER.log(Level.INFO, "Unable to get bean '" + beanName + "' from Spring context by name. Trying to get by type...");
             }
 
             DependencyDescriptor dependencyDescriptor = createSpringDependencyDescriptor(injectee);
