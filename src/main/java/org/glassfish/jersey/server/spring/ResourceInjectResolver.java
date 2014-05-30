@@ -98,7 +98,7 @@ public class ResourceInjectResolver implements InjectionResolver<Resource> {
                 } else if (element.getClass().isAssignableFrom(Method.class)){
                     String methodName = ((Method) element).getName();
                     if (methodName.startsWith("set")){
-                        String firstLetter = methodName.substring(0, 1).toLowerCase();
+                        String firstLetter = methodName.substring(3, 4).toLowerCase();
                         beanName = firstLetter + methodName.substring(4);
                     }
                 }
